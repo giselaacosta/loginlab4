@@ -1,0 +1,29 @@
+<!DOCTYPE>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <h2 style="text-align:center"><i>{{ title }}</i></h2>
+ 
+
+      <div class="success" *ngIf="authService.user | async">
+        <h3>Welcome <i>{{ (authService.user | async)?.email }}</i>!</h3>
+        <button (click)="logout()" class="btn btn-success btn-md">
+          Logout
+        </button>
+      </div>
+    </div>
+    
+ 
+  </div>
+
+</body>
+
+</html>
